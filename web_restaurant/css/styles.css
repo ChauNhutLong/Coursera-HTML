@@ -39,7 +39,7 @@ p > img {
 }
 
 
-.navbar-brand a:hover, .navbar-brand a{
+.navbar-brand a:hover, .navbar-brand a: focus{
 	text-decoration: none;
 }
 .navbar-brand p { /* Kosher cert */
