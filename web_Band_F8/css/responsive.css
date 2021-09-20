@@ -10,5 +10,11 @@
 
 /* Mobile */
 @media (max-width: 739px) {
+    #nav > li {
+        display: block;
+    }
 
+    #header .search-btn {
+        display: none;
+    }
 }
