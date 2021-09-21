@@ -10,11 +10,56 @@
 
 /* Mobile */
 @media (max-width: 739px) {
-    #nav > li {
+    .col-sm-12 {
+        width: 100%;
+    }
+    
+    #header {
+        overflow: hidden;
+    }
+
+    #header .mobile-menu-btn {
         display: block;
     }
 
     #header .search-btn {
         display: none;
+    } 
+ 
+    #nav {
+        display: block;
     }
+
+    #nav li a {
+        padding: 1px 24px;
+    }
+
+    #nav > li {
+        display: block;
+    }
+
+    #nav > li:nth-child(1) {
+        display: inline-block;
+    }
+
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        line-height: 46px;
+        padding: 5px 41px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    #content .members-list {
+        margin-top: 36px;
+    }
+
+    #content .member-img {
+        width: 60%;
+    }
+
+
 }

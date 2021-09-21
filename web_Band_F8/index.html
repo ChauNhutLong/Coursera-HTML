@@ -57,15 +57,15 @@
 					<p class="about-text">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				</p>
 				<div class="row members-list">
-					<div class="col col-third text-center">
+					<div class="col-sm-12 col col-third mt-16 text-center">
 						<p class="member-name">Name</p>
 						<img src='./img/bandmember.jpg' alt="Name" class="member-img">
 					</div>
-					<div class="col col-third text-center">
+					<div class="col-sm-12 col col-third mt-16 text-center">
 						<p class="member-name">Name</p>
 						<img src='./img/bandmember.jpg' alt="Name" class="member-img">
 					</div>
-					<div class="col col-third text-center">
+					<div class="col-sm-12 col col-third mt-16 text-center">
 						<p class="member-name">Name</p>
 						<img src='./img/bandmember.jpg' alt="Name" class="member-img">
 					</div>
@@ -85,7 +85,7 @@
 					</ul>
 					<!-- Places -->
 					<div class="row places-list">
-						<div class="col col-third">
+						<div class="col col-third col-sm-12 mt-16">
 							<img src="./img/newyork.jpg" alt="New York" class="place-img">
 							<div class="place-body">
 								<h3 class="place-heading">New York</h3>
@@ -94,7 +94,7 @@
 								<button class="place-buy-btn js-buy-ticket">Buy Tickets</button>
 							</div>
 						</div>
-						<div class="col col-third">
+						<div class="col col-third col-sm-12 mt-16">
 							<img src="./img/paris.jpg" alt="Paris" class="place-img">
 							<div class="place-body">
 								<h3 class="place-heading">Paris</h3>
@@ -103,7 +103,7 @@
 								<button class="place-buy-btn js-buy-ticket">Buy Tickets</button>
 							</div>
 						</div>
-						<div class="col col-third">
+						<div class="col col-third col-sm-12 mt-16">
 							<img src="./img/sanfran.jpg" alt="San Francisco" class="place-img">
 							<div class="place-body">
 								<h3 class="place-heading">San Francisco</h3>
@@ -257,9 +257,14 @@
 		var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
 		for (var i = 0; i <menuItems.length; i++) {
 			var menuItem = menuItems[i];
-			
+
 			menuItem.onclick= function () {
-				header.style.height = null;
+				var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+				if (isParentMenu) {
+					event.preventDefault();		
+				} else {
+					header.style.height = null;
+				}
 			}
 		}
 	</script>

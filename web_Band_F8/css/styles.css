@@ -60,6 +60,8 @@ html {
 	width: calc(100% / 3);
 }
 
+
+
 /* Margin */
 .mt-8 {
 	margin-top: 8px !important;
@@ -77,7 +79,6 @@ html {
 	top: 0;
 	left: 0;
 	right: 0;
-	overflow: hidden;
 	z-index: 1;
 }
 
@@ -108,7 +109,7 @@ html {
 	text-decoration: none;
 	line-height: 46px;
 	padding: 0 24px;
-	display: inline-block;
+	display: block;
 }
 
 #nav > li:hover > a, #nav .subnav li:hover {
@@ -141,11 +142,17 @@ html {
 }
 
 
+#header .mobile-menu-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+}
+
 #header .mobile-menu-btn,
 #header .search-btn {
 	float: right;
 	padding: 0 21px;
-
 }
 
 #header .search-btn:hover{
@@ -204,17 +211,18 @@ html {
 }
 #content .content-section .section-heading{
 	font-family: 'Padauk', sans-serif;
-	font-size: 30px;
+	font-size: 32px;
 	text-align: center;
 	font-weight: 400;
-	margin-top: 42px;
+	margin-top: 40px;
 	letter-spacing: 4px;
 }
 
 #content .content-section .section-sub-heading{
 	font-size: 15px;
 	opacity: 0.6;
-	margin: 15px 0;
+	margin-top: 15px;
+	margin-bottom: 36px;
 	text-align: center;
 }
 
@@ -225,7 +233,7 @@ html {
 }
 
 #content .members-list {
-	margin-top: 62px;
+	margin-top: 46px;
 
 }
 
@@ -278,7 +286,7 @@ html {
 
 /* Places */
 .places-list {
-	margin-top: 32px;
+	margin-top: 16px;
 }
 
 .place-img:hover {
