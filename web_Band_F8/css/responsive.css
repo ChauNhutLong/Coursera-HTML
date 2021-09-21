@@ -95,6 +95,11 @@
         width: 60%;
     }
 
+    .contact-form .form-control {
+        line-height: 30px;
+        padding: 12px;
+    }
+    
     .form-submit-btn {
         margin-top: 24px;
     }
