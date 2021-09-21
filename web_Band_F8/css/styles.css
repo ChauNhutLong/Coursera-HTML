@@ -64,11 +64,15 @@ html {
 
 /* Margin */
 .mt-8 {
-	margin-top: 8px !important;
+	margin-top: 8px;
 }
 
 .mt-16 {
-	margin-top: 16px !important;
+	margin-top: 16px;
+}
+
+.mt-32 {
+	margin-top: 32px;
 }
 
 
@@ -324,10 +328,11 @@ html {
 .place-buy-btn {
 	color: #fff;
 	font-weight: 400;
+	font-size: 16px;
 	display: inline-block;
 	background-color: black;
 	text-decoration: none;
-	padding: 8px 16px;
+	padding: 12px 16px;
 	border: none;
 	cursor: pointer;
 }
@@ -345,6 +350,7 @@ html {
 .contact-info {
 	font-size: 18px;
 	line-height: 27px;
+	margin-bottom: 12px;
 }
 
 .contact-info i[class*="ti-"] {
