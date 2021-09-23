@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.4-web/css/all.min.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -19,17 +20,106 @@
                 <nav class="navbar">
                     <ul class="navbar__list">
                         <li class="navbar__item navbar__item--separate">Kênh Người Bán</li>
-                        <li class="navbar__item navbar__item--separate">Trở thành Người bán Shopee</li>
-                        <li class="navbar__item navbar__item--separate">Tải ứng dụng</li>
-                        <li class="navbar__item">Kết nối</li>
+                        <a href="notify__item-link"></a>
+                        <li class="navbar__item navbar__item--has-qr navbar__item--separate">
+                            Tải ứng dụng
+                            <!-- QR CODE-->
+                            <div class="qr">
+                                <img src="./img/QR_code.png" alt="QR Code" class="qr__img">
+                                <div class="qr__apps">
+                                    <a href="" class="qr__link">
+                                        <img src="./img/AppStore.png" alt="App Store" class="qr__apps-img">
+                                    </a>
+                                    <a href="" class="qr__link">
+                                        <img src="./img//GooglePlay.png" alt="Google Play" class="qr__apps-img">
+                                    </a>    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="navbar__item">
+                            <span class="navbar__title--no-pointer">Kết nối</span>
+                            <a href="" class="navar__icon-link">
+                                <i class="navbar__icon fab fa-facebook"></i>
+                            </a>
+                            <a href="" class="navar__icon-link">
+                                <i class="navbar__icon fab fa-instagram"></i>
+                            </a>
+                        </li>
                     </ul>
                     <ul class="navbar__list">
+                        <li class="navbar__item navbar__item--has-notify">
+                            <a href="" class="navbar__item-link">
+                                <i class="navbar__icon fas fa-bell"></i>
+                                Thông Báo
+                            </a>
+                            <div class="notify">
+                                <header class="notify__header">
+                                    <h3>Thông Báo Mới Nhận</h3>
+                                </header>
+                                <ul class="notify__list">
+                                    <li class="notify__item notify__item--viewed">
+                                        <a href="" class="notify__item-link">
+                                            <img src="./img/khan_uot_agi.jpg" alt="" class="notify__item-img">
+                                            <div class="notify__item-info">
+                                                <span class="notify__item-name">Mua ngay kẻo lỡ!</span>
+                                                <span class="notify__item-description">Khăn ước Agi 100 tờ đang cháy hàng rất nhanh. Lẹ tay chốt đơn!</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="notify__item">
+                                        <a href="" class="notify__item-link">
+                                            <img src="./img/khan_uot_agi.jpg" alt="" class="notify__item-img">
+                                            <div class="notify__item-info">
+                                                <span class="notify__item-name">Mua ngay kẻo lỡ!Mua ngay kẻo lỡ!Mua ngay kẻo lỡ!Mua ngay kẻo lỡ!Mua ngay kẻo lỡ!</span>
+                                                <span class="notify__item-description">Khăn ước Agi 100 tờ đang cháy hàng rất nhanh. Lẹ tay chốt đơn!</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="notify__item">
+                                        <a href="" class="notify__item-link">
+                                            <img src="./img/khan_uot_agi.jpg" alt="" class="notify__item-img">
+                                            <div class="notify__item-info">
+                                                <span class="notify__item-name">Mua ngay kẻo lỡ!</span>
+                                                <span class="notify__item-description">Khăn ước Agi 100 tờ đang cháy hàng rất nhanh. Lẹ tay chốt đơn!</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="notify__item notify__item--viewed">
+                                        <a href="" class="notify__item-link">
+                                            <img src="./img/khan_uot_agi.jpg" alt="" class="notify__item-img">
+                                            <div class="notify__item-info">
+                                                <span class="notify__item-name">Mua ngay kẻo lỡ!</span>
+                                                <span class="notify__item-description">Khăn ước Agi 100 tờ đang cháy hàng rất nhanh. Lẹ tay chốt đơn!</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="notify__item">
+                                        <a href="" class="notify__item-link">
+                                            <img src="./img/khan_uot_agi.jpg" alt="" class="notify__item-img">
+                                            <div class="notify__item-info">
+                                                <span class="notify__item-name">Mua ngay kẻo lỡ!</span>
+                                                <span class="notify__item-description">Khăn ước Agi 100 tờ đang cháy hàng rất nhanh. Lẹ tay chốt đơn!</span>
+                                            </div>
+                                        </a>
+                                    </li>   
+                                </ul>
+                                <footer class="notify__footer">
+                                    <a href="" class="notify__footer-btn">Xem tất cả</a>
+                                </footer>
+                            </div>
+                        </li>
                         <li class="navbar__item">
-                            <a href="" class="navbar__item-link">Thông Báo</a></li>
+                            <a href="" class="navbar__item-link">
+                                <i class="navbar__icon far fa-question-circle"></i>
+                                Hỗ Trợ
+                            </a>
+                        </li>
+                        <li class="navbar__item navbar__item--separate">
+                            <a href="" class="navbar__item-link">Đăng Ký</a>
+                        </li>
                         <li class="navbar__item">
-                            <a href="" class="navbar__item-link">Hỗ Trợ</a></li>
-                        <li class="navbar__item navbar__item--separate">Đăng Ký</li>
-                        <li class="navbar__item">Đăng Nhập</li>
+                            <a href="" class="navbar__item-link">Đăng Nhập</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
