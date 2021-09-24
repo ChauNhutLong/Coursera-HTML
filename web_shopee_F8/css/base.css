@@ -3,6 +3,7 @@
     --white-color:#fff;
     --black-color: #000;
     --text-color: #333;
+    --boder-color: #dbdbdb;
 }
 
 * {
@@ -145,7 +146,29 @@ html {
     cursor: default;
     transform-origin: calc(100% - 20px) top;
     animation: headerNotifyGrowth ease-in 0.2s;
+    will-change: opacity, transform;
 }
+
+.notify::before {
+    content: "";
+    border-width: 21px 32px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 6px;
+    top: -30px;
+}
+
+.notify::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 110px;
+    height: 20px;
+    right: 0;
+    top: -16px;
+}
+
 
 .notify__header {
     height: 40px;
@@ -245,4 +268,64 @@ html {
         transform: scale(1);
         opacity: 1;
     }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+
+.modal__overplay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body {
+    position: relative;
+    z-index: 1;
+    margin: auto;
+}
+
+
+.btn {
+    min-width: 142px;
+    height: 34px;
+    border: none;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.btn--normal:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn--disabled {
+    cursor: default;
+    background-color: #c3c3c3;
+    color: #949494;
 }
