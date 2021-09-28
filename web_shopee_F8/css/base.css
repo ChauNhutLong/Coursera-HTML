@@ -4,6 +4,9 @@
     --black-color: #000;
     --text-color: #333;
     --boder-color: #dbdbdb;
+    --header-height: 120px;
+    --navbar-height: 46px;
+    --header-with-search-height: calc(var(--header-height) - (var(--navbar-height)));
 }
 
 * {
@@ -31,111 +34,11 @@ html {
     flex-wrap: wrap;
 }
 /* Header */
-.header {
-    background: linear-gradient(-180deg,#f53d2d,#f63);
-}
 
-
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-}
-
-.navbar__list {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 4px;
-}
-
-.navbar__item{
-    position: relative;
-    margin: 0 8px;
-   
-}
-
-.navbar__item--separate::after {
-    content: "";
-    display: block;
-    position: absolute;
-    border-left: 2px solid #f63;
-    height: 12px;
-    right: -9px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-
-.navbar__item--has-notify:hover .notify,
-.navbar__item--has-qr:hover .qr {
-    display: block;
-}
-
-.navbar__item,
-.navbar__item-link {
-    display: inline-block;
-    font-size: 1.3rem;
-    color: var(--white-color);
-    text-decoration: none;
-    font-weight: 400;
-    min-height: 26px;
-}
-
-.navbar__item,
-.navbar__item-link,
-.navbar__icon {
-    display: inline-flex;
-    align-items: center;
-}
-
-.navbar__item:hover,
-.navbar__item-link:hover,
-.navar__icon-link:hover {
-    color: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-}
-.navar__icon-link {
-    color: var(--white-color);
-    text-decoration: none;
-}
-.navbar__icon {
-    font-size: 1.5rem;
-    margin: 0 4px;
-}
-
-.navbar__title--no-pointer {
-    cursor: text;
-    color: var(--white-color)
-}
-
-.qr {
-    display: none;
-    border-radius: 3px;
-    width: 190px;
-    background-color: var(--white-color);
-    position: absolute;
-    left: 0;
-    top: 110%;
-    animation: fadeIn ease 0.3s;
-}
-
-.qr__img {
-    border-radius: 3px;
-    width: 100%;
-}
-
-.qr__apps {
-    display: flex;
-    justify-content: space-between;
-}
-
-.qr__apps-img {
-    height: 16px;
-    margin: 0 12px;
-}
 
 .notify {
     display: none;
+    z-index: 1;
     position: absolute;
     top: 110%;
     right: 0;
@@ -259,6 +162,15 @@ html {
     }
 }
 
+@keyframes growth {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 @keyframes headerNotifyGrowth {
     from {
         transform: scale(0.1);
@@ -277,6 +189,7 @@ html {
     bottom: 0;
     left: 0;
     display: flex;
+    animation: fadeIn linear 0.1s;
 }
 
 .modal__overplay {
@@ -290,7 +203,9 @@ html {
     position: relative;
     z-index: 1;
     margin: auto;
+    animation: growth linear 0.1s;
 }
+
 
 
 .btn {
@@ -307,6 +222,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 1.4rem;
 }
 
 .btn.btn--normal:hover {
