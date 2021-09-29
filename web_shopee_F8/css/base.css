@@ -19,6 +19,7 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Responsive */
 .grid {
     width: 1200px;
     max-width: 100%;
@@ -32,7 +33,22 @@ html {
 .grid__row {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
 }
+
+.grid__col-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(100% / 6);
+}
+
+.grid__col-10 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc(100% / (12/10));
+}
+
 /* Header */
 
 
@@ -47,7 +63,7 @@ html {
     border: 1px solid #d3d3d3;
     border-radius: 2px;
     cursor: default;
-    transform-origin: calc(100% - 20px) top;
+    transform-origin: calc(100% - 32px) top;
     animation: headerNotifyGrowth ease-in 0.2s;
     will-change: opacity, transform;
 }
@@ -209,7 +225,7 @@ html {
 
 
 .btn {
-    min-width: 142px;
+    min-width: 120px;
     height: 34px;
     border: none;
     text-decoration: none;
