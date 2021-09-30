@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="./fonts/fontawesome-pro-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -157,6 +157,21 @@
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
                             
+                            <div class="header__search-select">
+                                <span class="header__search-select-label">Trong Shop này</span>
+                                <i class="header__search-select-icon far fa-chevron-down"></i>
+                                <ul class="header__search-option">
+                                    <li class="header__search-option-item header__search-option-item--active">
+                                        <span>Trong Shop này</span>
+                                        <i class="fal fa-check"></i>
+                                    </li>
+                                    <li class="header__search-option-item">
+                                        <span>Trong Shopee</span>
+                                        <i class="fal fa-check"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            
                             <!-- Search history-->
                             <div class="header__search-history">
                                 <h3 class="header__search-history-heading">
@@ -176,13 +191,14 @@
                             </div>
                         </div>
                         <button class="header__search-btn">
-                            <i class="header__search-btn-icon fas fa-search"></i>
+                            <i class="header__search-btn-icon fal fa-search"></i>
                         </button>
                     </div>
+                    
                     <!-- Cart layout-->
                     <div class="cart">
                         <div class="cart__wrap">
-                            <i class="cart__icon fas fa-shopping-cart"></i>
+                            <i class="cart__icon far fa-shopping-cart"></i>
                             <span class="cart-notice">3</span>
 
                             <!-- No cart: cart__list--no-cart-->
@@ -269,42 +285,90 @@
             </div>
         </header>
         <!-- Container-->
-        <div class="container">
+        <div class="app__container">
             <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__full-width container__back">                                              
+                        <a href="" class="container__back-text">
+                            <i class="far fa-chevron-left container__back-icon"></i> 
+                            TRỞ LẠI TRANG CỦA SHOP
+                        </a>
+                    </div>
+                </div>
                 <div class="grid__row">
                     <div class="grid__col-2">
                         <nav class="category">
-                            <h3 class="category__heading">
-                                <i class="fas fa-list"></i>
-                                DANH MỤC SHOP
-                            </h3>
-                            <ul class="category__list">
-                                <li class="category__item">
-                                    <a href="#" class="category__item-link">Sản Phẩm</a>
-                                </li>
-                                <li class="category__item">
-                                    <a href="#" class="category__item-link">TOP Bán Chạy</a>
-                                </li>
-                                <li class="category__item">
-                                    <a href="#" class="category__item-link">iPhone</a>
-                                </li>
-                                <li class="category__item">
-                                    <a href="#" class="category__item-link">iPad</a>
-                                </li>
-                                <li class="category__item">
-                                    <a href="#" class="category__item-link">Mac</a>
-                                </li>
-                                <li class="category__item">
-                                    <a href="#" class="category__item-link">Apple Watch</a>
-                                </li>
-                                <li class="category__item">
-                                    <a href="#" class="category__item-link">Phụ kiện Apple</a>
-                                </li>
-                            </ul>
+                            <div class="category__shop">
+                                <img src="./img/heading__img.png" alt="" class="category__shop-img">
+                                <a href="#" class="category__shop-logo">
+                                    <img src="./img/heading__brand-img.png" alt="" class="category__shop-icon">
+                                    
+                                </a>  
+                                <p class="category__shop-name">Shopdunk Official Store</p>                              
+                            </div>
+                            <div class="category__wrap">
+                                <h3 class="category__heading">                                
+                                    DANH MỤC SHOP
+                                </h3>
+                                <ul class="category__list">
+                                    <li class="category__item category__item--active">
+                                        <a href="#" class="category__item-link">Sản Phẩm</a>
+                                    </li>
+                                    <li class="category__item">
+                                        <a href="#" class="category__item-link">TOP Bán Chạy</a>
+                                    </li>
+                                    <li class="category__item">
+                                        <a href="#" class="category__item-link">iPhone</a>
+                                    </li>
+                                    <li class="category__item">
+                                        <a href="#" class="category__item-link">iPad</a>
+                                    </li>
+                                    <li class="category__item">
+                                        <a href="#" class="category__item-link">Mac</a>
+                                    </li>
+                                    <li class="category__item">
+                                        <a href="#" class="category__item-link">Apple Watch</a>
+                                    </li>
+                                    <li class="category__item">
+                                        <a href="#" class="category__item-link">Phụ kiện Apple</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
                         </nav>
                     </div>
                     <div class="grid__col-10">
-                        
+                        <div class="home__filter">
+                            <span class="home__filter-label">Sắp xếp theo</span>
+                            <button class="home__filter-btn btn btn--primary">Phổ Biến</button>
+                            <button class="home__filter-btn btn">Mới Nhất</button>
+                            <button class="home__filter-btn btn">Bán Chạy</button>
+                            <div class="select__input">
+                                <span class="select__input-label">Giá</span>
+                                <i class="select__input-icon fas fa-chevron-down"></i>
+                                <ul class="select__input-list">
+                                    <li class="select__input-item">
+                                        <a href="" class="select__input-link">Giá: Thấp đến Cao</a>
+                                    </li> 
+                                    <li class="select__input-item">
+                                        <a href="" class="select__input-link">Giá: Cao đến Thấp</a>
+                                    </li>                                     
+                                </ul>
+                            </div>
+                            <div class="home__filter-page">
+                                <span class="home__filter-page-num">
+                                    <span class="home__filter-page-current">1</span>/2
+                                </span>
+                                <div class="home__filter-page-control">
+                                    <a href="" class="home__filter-page-btn home__filter-page-btn--disabled">
+                                        <i class="home__filter-page-icon far fa-angle-left"></i>                                        
+                                    </a>
+                                    <a href="" class="home__filter-page-btn">
+                                        <i class="home__filter-page-icon far fa-angle-right"></i>                                        
+                                    </a>                                
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
