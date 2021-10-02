@@ -1,11 +1,12 @@
 :root {
-    --primary-color: rgb(238, 77, 43);
+    /* --primary-color: #ee4d2b; */
+    --primary-color :#d0011b;
     --white-color:#fff;
     --black-color: #000;
     --text-color: #333;
     --boder-color: #dbdbdb;
     --header-height: 120px;
-    --navbar-height: 46px;
+    --navbar-height: 34px;
     --header-with-search-height: calc(var(--header-height) - (var(--navbar-height)));
 }
 
@@ -33,20 +34,24 @@ html {
 .grid__row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -12px;
-    margin-right: -12px;
+    margin-left: -5px;
+    margin-right: -5px;
 }
 
 .grid__col-2 {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
     width: calc(100% / 6);
 }
 
+.grid__col-2-4 {
+    width: 20%;
+}
+
 .grid__col-10 {
-    padding-left: 12px;
-    padding-right: 12px;
-    width: calc(100% / (12/10));
+    padding-left: 5px;
+    padding-right: 5px;
+    width: calc(100% / 1.2);
 }
 
 /* Header */
@@ -254,7 +259,7 @@ html {
 
 .btn.btn--primary {
     color: var(--white-color);
-    background-color: var(--primary-color);
+    background-color: #ee4d2d;
 }
 
 .btn--disabled {
@@ -326,4 +331,9 @@ html {
 
 .select__input-link:hover {
     color: var(--primary-color);
+}
+
+.price-icon {
+    font-size: 1rem;
+    color: #ee4d2d;
 }
