@@ -337,3 +337,39 @@ html {
     font-size: 1rem;
     color: #ee4d2d;
 }
+
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination__item {
+
+}
+
+
+.pagination__item--active  .pagination__item-link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagination__item--active  .pagination__item-link:hover {
+    background: #f05d40;
+}
+
+.pagination__item-link {
+    --height: 30px;
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    margin: 0 15px;
+    text-align: center;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.4);
+}
