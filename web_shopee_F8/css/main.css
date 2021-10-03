@@ -978,11 +978,6 @@
     color: #555555;
 }
 
-
-.product {
-
-}
-
 .product__item--wrap {
     position: relative;
     display: block;
@@ -1126,10 +1121,6 @@
 
 .product__item-like {
     font-size: 1.2rem;
-}
-
-i.product__item-like-icon-empty {
-    
 }
 
 i.product__item-like-icon-fill {

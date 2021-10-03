@@ -155,10 +155,6 @@ html {
     line-height: 1.6rem;
 }
 
-.notify__footer {
-    
-}
-
 .notify__footer-btn {
     display: block;
     font-size: 1.4rem;
@@ -344,10 +340,6 @@ html {
     align-items: center;
     justify-content: center;
     list-style: none;
-}
-
-.pagination__item {
-
 }
 
 
