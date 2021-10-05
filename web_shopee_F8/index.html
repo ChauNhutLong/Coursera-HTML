@@ -17,13 +17,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body>
     <div class="main">
         <!-- Header-->
         <header class="header">
-            <div class="grid">
-                <nav class="navbar">
+            <div class="grid wide">
+                <nav class="navbar hide-on-mobile-tablet">
                     <ul class="navbar__list">
                         <li class="navbar__item navbar__item--separate">Kênh Người Bán</li>
                         <a href="notify__item-link"></a>
@@ -148,7 +150,8 @@
 
                 <!-- Header with search-->
                 <div class="header-with-search">
-                    <div class="header__wrapper">
+
+                    <div class="header__wrapper hide-on-mobile">
                         <a href="#" class="header__left">
                             <svg enable-background="new 0 0 48 48" viewBox="0 0 48 48" x="0" y="0" class="header__left-logo">
                                 <path fill="#fff"
@@ -156,8 +159,8 @@
                                 ></path>
                             </svg>                            
                         </a>
-                        <a href="" class="header__left--separate"></a>
-                        <a href="#" class="header__mid">
+                        <a href="" class="header__left--separate hide-on-tablet"></a>
+                        <a href="#" class="header__mid hide-on-tablet">
                             <svg viewBox="0 0 220 44" class="header__mid-name">
                                 <g fill="#fff" fill-rule="evenodd" transform="translate(0 -.098)">
                                     <path
@@ -174,20 +177,21 @@
                             </svg>
                         </a>                  
                     </div>
+
                     <div class="header__right">
                         <div class="header__search">
                             <div class="header__search-input-wrap">
                                 <input type="text" class="header__search-input" placeholder="Tìm trong Shop này">
-                                <div class="header__search-select">
+                                <div class="header__search-select hide-on-mobile">
                                     <span class="header__search-select-label">Trong Shop này</span>
                                     <i class="header__search-select-icon far fa-chevron-down"></i>
                                     <ul class="header__search-option">
                                         <li class="header__search-option-item header__search-option-item--active">
                                             <span>Trong Shop này</span>
-                                           
+                                            <i class="far fa-check"></i>
                                         </li>
                                         <li class="header__search-option-item">
-                                            <span>Trong Shopee</span>
+                                            <span>Tại Shopee Mall</span>
                                            
                                         </li>
                                     </ul>
@@ -226,7 +230,7 @@
                                         <circle cx="19.7" cy="23" r="2.2" stroke="none"></circle>
                                     </svg>                                  
                                 </a>                            
-                                <span class="cart-notice">5</span>
+                                <span class="cart-notice">4</span>
     
                                 <!-- No cart: cart__list--no-cart-->
                                 <div class="cart__list">
@@ -238,20 +242,7 @@
                                     <h4 class="cart-heading">Sản Phẩm Mới Thêm</h4>
                                     <ul class="cart__list-item">
     
-                                        <!-- Cart item-->
-                                        <li class="cart-item">
-                                            <img src="./img/cart-item.png" alt="" class="cart__img-item">
-                                            <div class="cart__item-info">
-                                                <div class="cart__item-head">
-                                                    <h5 class="cart__item-name">Tai nghe LG HBS FN6</h5>
-                                                    <div class="cart__item-price-wrap">                                                      
-                                                        <span class="price-icon">₫</span>
-                                                        <span class="cart__item-price">1.750.000</span>
-                                                    </div>  
-                                                </div>                                            
-                                            </div>
-                                        </li>
-                                        
+                                        <!-- Cart item-->                                      
                                         <li class="cart-item">
                                             <img src="./img/cart-item-2.jpg" alt="" class="cart__img-item">
                                             <div class="cart__item-info">
@@ -315,20 +306,36 @@
 
                 </div>
             </div>
+
+            
+            <ul class="header__sort-bar">
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
         </header>
         <!-- Container-->
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__full-width container__back">                                              
+            <div class="grid wide">
+                <div class="row">
+                    <div class="grid container__back hide-on-mobile-tablet">                                              
                         <a href="" class="container__back-text">
                             <i class="far fa-chevron-left container__back-icon"></i> 
                             TRỞ LẠI TRANG CỦA SHOP
                         </a>
                     </div>
                 </div>
-                <div class="grid__row">
-                    <div class="grid__col-2">
+                <div class="row row-sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <div class="category__shop">
                                 <div class="category__shop-img">                                  
@@ -375,8 +382,8 @@
                             
                         </nav>
                     </div>
-                    <div class="grid__col-10">
-                        <div class="home__filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home__filter hide-on-mobile-tablet">
                             <span class="home__filter-label">Sắp xếp theo</span>
                             <button class="home__filter-btn btn btn--primary">Phổ Biến</button>
                             <button class="home__filter-btn btn">Mới Nhất</button>
@@ -408,9 +415,29 @@
                             </div>
                         </div>
 
+                        <nav class="mobile__category show-on-mobile">
+                            <ul class="mobile__category-list">
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Shopee Mall</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Freeship Xtra</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Yêu thích</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Miễn phí vận chuyển</a>
+                                </li>
+                                <li class="mobile__category-item">
+                                    <a href="" class="mobile__category-link">Đánh giá</a>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <div class="product">
-                            <div class="grid__row">
-                                <div class="grid__col-2-4">
+                            <div class="row row-sm-gutter">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -419,7 +446,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB </h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -429,7 +456,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like">
@@ -456,7 +483,7 @@
                                         </div> 
                                     </a>                               
                                 </div>
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -465,7 +492,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 12 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -475,7 +502,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">18.990.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like">
@@ -502,7 +529,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -511,7 +538,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple 20W USB-C Power Adapter (sạc nhanh)</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0 product__item-offer--0--none">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay product__item-offer--pay--none">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -521,7 +548,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">590.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like">
@@ -548,7 +575,7 @@
                                         </div> 
                                     </a>                               
                                 </div>
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -557,7 +584,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 12 Pro Max 128GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -567,7 +594,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">29.350.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like">
@@ -594,7 +621,7 @@
                                         </div> 
                                     </a>                               
                                 </div>
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -603,7 +630,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPad Air 4 10.9 inch (2020) Wi-Fi 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -613,7 +640,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">16.650.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like">
@@ -640,7 +667,7 @@
                                         </div> 
                                     </a>                               
                                 </div>
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -649,7 +676,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple MacBook Air 13 inch (2020) M1, 8GB, 256GB SSD</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay product__item-offer--pay--none">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -659,7 +686,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">28.990.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like">
@@ -686,7 +713,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -695,7 +722,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 12 Pro Max 256GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -705,7 +732,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">31.890.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -732,7 +759,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -741,7 +768,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -751,7 +778,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -778,7 +805,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -787,7 +814,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple Watch SE GPS Sport Band (Dây Cao Su)</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -797,7 +824,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">6.990.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -824,7 +851,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -833,7 +860,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple Pencil dành cho iPad (bút cảm ứng)</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -843,7 +870,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">3.690.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -870,7 +897,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -879,7 +906,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone Xr 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -889,7 +916,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">11.590.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -916,7 +943,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -925,7 +952,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name"> Apple AirPods 2 (tai nghe)</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay product__item-offer--pay--none">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -935,7 +962,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">3.550.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -962,7 +989,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -971,7 +998,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -981,7 +1008,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1008,7 +1035,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1017,7 +1044,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1027,7 +1054,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1054,7 +1081,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1063,7 +1090,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1073,7 +1100,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1100,7 +1127,7 @@
                                         </div> 
                                     </a>                               
                                 </div>
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1109,7 +1136,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1119,7 +1146,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1146,7 +1173,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1155,7 +1182,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1165,7 +1192,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1192,7 +1219,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1201,7 +1228,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1211,7 +1238,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1238,7 +1265,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1247,7 +1274,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1257,7 +1284,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1284,7 +1311,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1293,7 +1320,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1303,7 +1330,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1330,7 +1357,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1339,7 +1366,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1349,7 +1376,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1376,7 +1403,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1385,7 +1412,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1395,7 +1422,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1422,7 +1449,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1431,7 +1458,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1441,7 +1468,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1468,7 +1495,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1477,7 +1504,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1487,7 +1514,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1514,7 +1541,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1523,7 +1550,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1533,7 +1560,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1560,7 +1587,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1569,7 +1596,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1579,7 +1606,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1606,7 +1633,7 @@
                                         </div> 
                                     </a>                               
                                 </div>                                                                                                                
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1615,7 +1642,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1625,7 +1652,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like ">
@@ -1652,7 +1679,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1661,7 +1688,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1671,7 +1698,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like">
@@ -1698,7 +1725,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1707,7 +1734,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1717,7 +1744,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like">
@@ -1744,7 +1771,7 @@
                                         </div> 
                                     </a>                               
                                 </div> 
-                                <div class="grid__col-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!--Product item-->                                    
                                     <a href="#" class="product__item--wrap">                                        
                                         <div class="product__item-img-wrap">
@@ -1753,7 +1780,7 @@
                                         </div>
                                         <div class="product__item">
                                             <h4 class="product__item-name">Apple iPhone 11 64GB</h4>
-                                            <div class="product__item-offer">
+                                            <div class="product__item-offer hide-on-mobile">
                                                 <div class="product__item-offer--0">0% TRẢ GÓP</div>
                                                 <div class="product__item-offer--pay">Mua Kèm Deal Sốc</div>                                    
                                             </div>
@@ -1763,7 +1790,7 @@
                                                     <span class="price-icon">₫</span>
                                                     <span class="product__item-price-current">14.310.000</span>
                                                 </div>
-                                                <i class="fas fa-shipping-fast product__item-icon-freeship"></i>
+                                                <i class="fas fa-shipping-fast product__item-icon-freeship hide-on-pc-low"></i>
                                             </div>
                                             <div class="product__item-action">
                                                 <span class="product__item-like">
@@ -1808,7 +1835,7 @@
                             </li>
                             <li class="pagination__item">
                                 <a href="" class="pagination__item-link">2</a>
-                            </li>                      
+                            </li>                     
                             <li class="pagination__item">
                                 <a href="" class="pagination__item-link">
                                     <i class="pagination__item-icon far fa-angle-right"></i>
@@ -1821,9 +1848,9 @@
         </div>
 
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__col-2-4 footer__list--wrap">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6 footer__list--wrap">
                         <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
                         <ul class="footer__list">
                             <li class="footer__item">
@@ -1862,7 +1889,7 @@
                         </ul>
                     </div>
 
-                    <div class="grid__col-2-4 footer__list--wrap">
+                    <div class="col l-2-4 m-4 c-6 footer__list--wrap">
                         <h3 class="footer__heading">VỀ SHOPEE</h3>
                         <ul class="footer__list">
                             <li class="footer__item">
@@ -1895,12 +1922,12 @@
                         </ul>
                     </div>
 
-                    <div class="grid__col-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">THANH TOÁN</h3>
                         
                     </div>
 
-                    <div class="grid__col-2-4 footer__list--wrap">
+                    <div class="col l-2-4 m-4 c-6 footer__list--wrap">
                         <h3 class="footer__heading">THEO DÕI CHÚNG TÔI</h3>
                         <ul class="footer__list">
                             <li class="footer__item">
@@ -1924,7 +1951,7 @@
                         </ul>
                     </div>
 
-                    <div class="grid__col-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">TẢI ỨNG DỤNG SHOPEE NGAY THÔI</h3>
                         <div class="footer__download">
                             <img src="./img/QR_code.png" alt="Download QR" class="footer__download-qr">
@@ -1938,7 +1965,7 @@
 
                 </div>
 
-                <div class="grid__row footer__text">
+                <div class="row footer__text">
                     <p class="footer__copyright">© 2021 - Châu Nhựt Long</p>
                     <div class="footer__country">
                         <p class="footer__country-info">Quốc gia & Khu vực:</p>
@@ -1978,7 +2005,7 @@
                 </div>          
             </div>
             <div class="footer__bottom">
-                <div class="grid">
+                <div class="grid wide">
                     <p class="footer__policy">© 2021 - Bản quyền thuộc về Công ty MTV Long Châu</p>
                 </div>
             </div>

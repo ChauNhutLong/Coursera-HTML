@@ -1,0 +1,135 @@
+
+/* -> PC Low resolution */
+@media (max-width: 1240px){
+    .hide-on-pc-low {
+        display: none;
+    }
+
+
+}
+/* PC Low resolution */
+@media (min-width: 1024px)  and (max-width: 1240px){
+    .product__item-sold {
+        margin-left: 4px;
+    }
+    .product__item-rating {
+        font-size: 0.8rem;
+    }
+}
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+    :root {
+        --header-height: 68px;
+        --navbar-height: 0px;
+    }
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+    .header {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .header-with-search {
+        padding: 12px 0;
+    }
+    .cart__list {
+        position: fixed;
+        top: var(--header-height);
+        right: 0px;
+        width: 100%;
+        padding: 0 calc((100% - 644px) / 2);
+    }
+    .cart__list::after {
+        display: none;
+    }
+    .app__container {
+        margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+    }
+    .header__sort-bar {
+        display: flex;
+    }
+
+}
+
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+    .hide-on-tablet {
+        display: none;
+    }
+    .header__left {
+        margin-right: 24px;
+    }
+    .header__search-input {
+        padding: 0 6px;
+    }
+    .header__search-select {
+        padding: 0 6px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .show-on-mobile {
+        display: block;
+    }
+
+    .header__right {
+        flex: 1;
+    }
+
+    .header__search-history {
+        position: fixed;
+        top: calc(var(--header-height) + var(--header-sort-bar-height) + 3px);
+        left: 0;
+        width: 100%;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    .header__search {
+        margin: 10px;
+    }
+    .header__search-input-wrap {
+        order: 1;
+    }
+    .header__search-btn {
+        background-color: var(--white-color);
+    }
+    .header__search-btn-icon {
+        color: rgba(0, 0, 0, 0.8);
+        font-size: 1.6rem;
+    }
+    .header__search-history-heading {
+        margin-left: 28px;
+    }
+    .header__search-history-item {
+        padding: 0 16px;
+    }
+    .header__search-option {
+        width: 110%
+    }
+
+    @keyframes mobileSearchSideIn {
+        from {
+            opacity: 0;
+            top: calc(var(--header-height) / 2);
+        }
+        to {
+            opacity: 1;
+            top: var(--header-height);
+        }
+    }
+    .pagination__item-link {
+        margin: 0 4px;
+        font-size: 1.6rem;
+    }
+    .app__content {
+        margin: 0 4px;
+    }
+    
+}
