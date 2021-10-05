@@ -575,7 +575,7 @@
 }
 
 .header__search-history-heading {
-    margin: 12px;
+    margin: 12px 0 6px 12px;
     font-size: 1.4rem;
     color: #999;
     font-weight: 400;
@@ -684,7 +684,7 @@
 
 .cart__list {
     position: absolute;
-    top: calc(100% + 2px);
+    top: calc(100% + 6px);
     right: 0px;
     background-color: var(--white-color);
     width: 400px;
@@ -712,7 +712,7 @@
     cursor: pointer;
     content: "";
     position: absolute;
-    right: 0px;
+    right: 8px;
     top: -30px;
     border-width: 20px 26px;
     border-style: solid;
@@ -815,7 +815,7 @@
 
 .cart-notice {
     position: absolute;
-    top: -3px;
+    top: -8px;
     right: 8px;
     padding: 0 5px;
     font-size: 1.4rem;
@@ -1000,8 +1000,10 @@
 
 .mobile__category-item {
     flex-shrink: 0;
+    flex-grow: 1;
     margin-right: 10px;
     margin-top: 10px;
+    min-width: 80px;
 }
 
 .mobile__category-link {
@@ -1105,6 +1107,7 @@
     box-shadow: 0 1px 2px 0 rgb(0, 0 , 0, .1);
     transition: transform linear 0.1s;
     will-change: transform;
+    -webkit-tap-highlight-color: transparent
 }
 
 .product__item--wrap:hover {
@@ -1346,6 +1349,7 @@ i.product__item-like-icon-fill {
 /* Footer */
 .footer {
     border-top: 4px solid var(--primary-color);
+    padding-top: 20px;
 }
 
 
@@ -1356,8 +1360,7 @@ i.product__item-like-icon-fill {
 .footer__heading {
     font-size: 1.3rem;
     color: rgba(0, 0, 0, .7);
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .footer__list {
@@ -1367,13 +1370,13 @@ i.product__item-like-icon-fill {
 }
 
 .footer__item-link {
-    display: flex;
+    display: block;
     text-decoration: none;
     font-size: 1.2rem;
     color: rgba(0, 0, 0, .6);
     margin-bottom: 12px;
-    align-items: center;
 }
+
 
 .footer__item-link:hover {
     color: #ee4d2d;
@@ -1382,6 +1385,9 @@ i.product__item-like-icon-fill {
 .footer__item-icon {
     font-size: 1.6rem;
     margin-right: 8px;
+    position: relative;
+    top: 2px;
+
 }
 
 .footer__item-icon, 
@@ -1398,7 +1404,6 @@ i.product__item-like-icon-fill {
     width: 84px; 
     border: 1px solid rgba(0, 0, 0, 0.09);
     margin-right: 15px;
-    display: none;
 }
 
 .footer__download-apps {
@@ -1447,11 +1452,11 @@ i.product__item-like-icon-fill {
 }
 
 .footer__bottom {
+    --height-footer-bootom: 48px;
     background-color: #f5f5f5;
     color: rgba(0, 0, 0, .7);
-    min-height: 48px;
-    padding: 8px 0;
-
+    min-height: var(--height-footer-bootom);
+    line-height: var(--height-footer-bootom);
 }
 
 .footer__policy {
