@@ -1,9 +1,24 @@
 {
-    "courses": [
-        {
-            "id" : 1,
-            "name" : "Kiến thức cho người mới bắt đầu",
-            "description" : "Kiến thức cơ bản cho người mới bắt đầu"
-        }
-    ] 
+  "courses": [
+    {
+      "id": 1,
+      "name": "Kiến thức cho người mới bắt đầu",
+      "description": "Kiến thức cơ bản cho người mới bắt đầu"
+    },
+    {
+      "name": "Javascript",
+      "description": "Javascript Cơ Bản",
+      "id": 2
+    },
+    {
+      "name": "HTML, CSS từ Zero đến Hero",
+      "description": "HTML, CSS từ Zero đến Hero",
+      "id": 3
+    },
+    {
+      "name": "Javascript Nâng Cao",
+      "description": "Javascript Nâng Cao",
+      "id": 4
+    }
+  ]
 }
