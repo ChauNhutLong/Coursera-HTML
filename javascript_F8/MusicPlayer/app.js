@@ -2,6 +2,8 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 
+const PLAYER_STORAGE_KEY = "F8_PLAYER";
+
 const player = $(".player");
 const cd = $(".cd");
 const heading = $("header h2");
@@ -13,13 +15,18 @@ const nextBtn = $(".btn-next");
 const prevBtn = $(".btn-prev");
 const randomBtn = $(".btn-random");
 const repeatBtn = $(".btn-repeat");
+const playlist = $(".playlist");
 
 
 const app = {
-    currentIndex: 6,
+    currentIndex: 0,
     isPlaying: false,
     isRandom: false,
     isRepeat: false,
+    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {
+        isRandom: false,
+        isRepeat: false,
+    },
     songs: [
         {
           name: "LiLac",
@@ -69,20 +76,41 @@ const app = {
             path: "./songs/song-8-above the time.mp3",
             image: "./images/song-8-above the time.png"
         },
-        
-      ],
+        {
+            name: "Palette",
+            singer: "IU, G-Dragon",
+            path: "./songs/song-9-palette.mp3",
+            image: "./images/song-9-palette.png"
+        },
+        {
+            name: "Jam Jam",
+            singer: "IU",
+            path: "./songs/song-10-jam jam.mp3",
+            image: "./images/song-10-jam jam.jpg"
+        },
+        {
+            name: "BBiBBi",
+            singer: "IU",
+            path: "./songs/song-11-bbibbi.mp3",
+            image: "./images/song-11-bbibbi.jpg"
+        },
+    ],
+    setConfig: function(key, value) {
+        this.config[key] = value;
+        localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
+    },
 
     render: function() {
         const htmls = this.songs.map((song , index) => {
             return `
-                <div class="song ${index === this.currentIndex ? "active" : ""}">
+                <div class="song ${index === this.currentIndex ? "active" : ""}" data-index = "${index}">
                     <div class="thumb" style="background-image: url('${song.image}')">
                 </div>
                 <div class="body">
                     <h3 class="title">${song.name}</h3>
                     <p class="author">${song.singer}</p>
                 </div>
-                    <div class="option">
+                <div class="option">
                     <i class="fas fa-ellipsis-h"></i>
                 </div>
             </div>
@@ -97,7 +125,6 @@ const app = {
             },
         })
     },
-
 
 
     handleEvents: function(){
@@ -170,7 +197,6 @@ const app = {
         nextBtn.onclick = function () {
             _this.isRandom ? _this.playRandomSong() : _this.nextSong();
             audio.play();
-            _this.render();
             _this.scrollToactivesong();
         }
 
@@ -178,19 +204,20 @@ const app = {
         prevBtn.onclick = function () {
             _this.isRandom ? _this.playRandomSong() : _this.prevSong();
             audio.play();
-            _this.render();
             _this.scrollToactivesong();
         }
 
         // Xử lý random bật / tắt random song
         randomBtn.onclick = function () {
             _this.isRandom = !_this.isRandom;
+            _this.setConfig("isRandom", _this.isRandom);
             randomBtn.classList.toggle("active", _this.isRandom);
         }
 
         // Xử lý khi bật / tắt repeat song
         repeatBtn.onclick = function () {
             _this.isRepeat = !_this.isRepeat;
+            _this.setConfig("isRepeat", _this.isRepeat);
             repeatBtn.classList.toggle("active", _this.isRepeat);
         }
 
@@ -198,26 +225,45 @@ const app = {
         audio.onended = function () {
             _this.isRepeat ? audio.play() : nextBtn.click();
         }
+
+        // Lắng nghe hành vi click vào playlist
+        playlist.onclick = function (e) {
+            const songNode = e.target.closest(".song:not(.active)")
+            if (songNode || e.target.closest(".option")) {
+                console.log(e.target)
+                // Xử lý khi click vào song
+                if (songNode) {
+                    _this.currentIndex = Number(songNode.dataset.index);
+                    _this.loadCurrentSong();
+                    audio.play();
+                }
+                // Xử lý khi click vào song option
+            }
+        };
+
+       
     },
     scrollToactivesong: function(){
-        setTimeout (function (){
-            if(this.currentIndex === 0 || this.currentIndex === 1){
-                window.scrollTo(0, 0);
-            }
-            else{
-                $('.song.active').scrollIntoView({
-                    behavior : 'smooth',
-                    block : 'nearest'
-                 })    
-            }
-        },300)
-       
+        setTimeout(() => {
+            $('.song.active').scrollIntoView({
+                behavior: 'smooth',
+                block: "end",
+            });
+        }, 300);
     },
     loadCurrentSong: function () {
         heading.innerText = this.currentSong.name;
         cdThumb.style.backgroundImage = `url("${this.currentSong.image}")`;
         audio.src = this.currentSong.path;
-
+        if ($('.song.active')) 
+        {
+          $('.song.active').classList.remove('active');
+        }
+        $$('.song')[this.currentIndex].classList.add('active');
+    },
+    loadConfig: function () {
+        this.isRandom = this.config.isRandom;
+        this.isRepeat = this.config.isRepeat;
     },
     nextSong: function () {
         this.currentIndex++; 
@@ -234,33 +280,39 @@ const app = {
         this.loadCurrentSong();
     },
     playRandomSong: function () {
+        this.arrSongs = [];
+        this.arrSongs.push(this.currentIndex);
+        if (this.arrSongs.length === this.songs.length)
+            this.arrSongs = [];
         let newIndex;
         do {
             newIndex = Math.floor(Math.random() * this.songs.length);
-        } while (this.currentIndex === newIndex);
+        } while (this.arrSongs.includes(newIndex));
         this.currentIndex = newIndex;
         this.loadCurrentSong();
     },
 
     start: function() {
+        // Gán cấu hình từ config vào ứng dụng
+        this.loadConfig();
+
         // Định nghĩa các thuộc tính cho object
         this.defineProperties();
 
-        
         // Lắng nghe và xử lý các sự kiện (DOM events)
         this.handleEvents();
-
-
-        // Tải thông tin bài hát đầu tiên vào UI khi chạy ứng dụng
-        this.loadCurrentSong();
 
         // Render Playlist
         this.render();
 
-        //
+        // Tải thông tin bài hát đầu tiên vào khi chạy ứng dụng
+        this.loadCurrentSong();
+
+        // Hiển thị trạng thái ban đầu của config (repeat & random)
+        randomBtn.classList.toggle("active", this.isRandom);
+        repeatBtn.classList.toggle("active", this.isRepeat);
         
     }
-
 }
 
 app.start();
