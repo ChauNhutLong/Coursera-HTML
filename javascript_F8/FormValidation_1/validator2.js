@@ -1,4 +1,6 @@
-function Validator(formSelector, options = {}) {
+function Validator(formSelector) {
+    var _this = this;
+    var formRules = {}
 
     function getParent(element, selector) {
         while (element.parentElement) {
@@ -8,9 +10,6 @@ function Validator(formSelector, options = {}) {
             element = element.parentElement;
         }
     }
-
-
-    var formRules = {}
 
     /*
         Quy ước tạo rule:
@@ -114,6 +113,7 @@ function Validator(formSelector, options = {}) {
         }
     }
 
+
     // Xử lý hành vi submit form
     formElement.onsubmit = function(event) {
         event.preventDefault();
@@ -130,36 +130,39 @@ function Validator(formSelector, options = {}) {
         
         // Khi không có lỗi thì submit form
         if (isVaid) {  
-            if (typeof options.onSubmit === 'function') {
+            if (typeof _this.onSubmit === 'function') {
                 var enableInputs = formElement.querySelectorAll("[name]:not([disabled]") ;
 
                 var formValues = Array.from(enableInputs).reduce(function (values, input) {
                     switch (input.type) {
                         case "checkbox":
-                            if (!input.matches(':checked')) {
+                            if (input.matches(':checked')) {
+                                if (!Array.isArray(values[input.name])) {
+                                    values[input.name] = []; 
+                                }
+                                values[input.name].push(input.value);
+                            } else if (!values[input.name]) {
                                 values[input.name] = '';
-                                return values;
                             }
-                            if (!Array.isArray(values[input.name])) {
-                                values[input.name] = [];
-                            }
-                            values[input.name].push(input.value);
                             break;
                         case "radio": 
-                            values[input.name] = formElement.querySelector("input[name=" + input.name + "]:checked").value;
+                            if (input.matches(':checked')) {
+                                values[input.name] = input.value;
+                            } else if (!values[input.name]) {
+                                values[input.name] = '';
+                            }
                             break;
                         case "file":
                             values[input.name] = input.files;
                             break;
                         default:
                             values[input.name] = input.value;
-                    }
-                    
+                    }    
                     return values;
                 }, {});
 
             // Gọi lại hàm onSubmit và trả về kèm giá trị của form
-            options.onSubmit(formValues);
+            _this.onSubmit(formValues);
             }
             else {
                 formElement.submit();
